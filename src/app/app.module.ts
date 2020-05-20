@@ -1,6 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import {NgModule} from '@angular/core';
-
+import {ReactiveFormsModule} from '@angular/forms'
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { AngularFontAwesomeModule } from 'angular-font-awesome';
@@ -13,11 +13,18 @@ import {MatCardModule} from '@angular/material/card';
 import { HttpClientModule } from '@angular/common/http';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HomepageComponent } from './homepage/homepage.component';
+import { LoginPageComponent } from './login-page/login-page.component';
+import { HeaderComponent } from './header/header.component';
+import { FooterComponent } from './footer/footer.component';
+import { Login } from './login';
 
 @NgModule({
   declarations: [
     AppComponent,
-    HomepageComponent
+    HomepageComponent,
+    LoginPageComponent,
+    HeaderComponent,
+    FooterComponent
   ],
   imports: [
     BrowserModule,
@@ -29,9 +36,10 @@ import { HomepageComponent } from './homepage/homepage.component';
     MatCardModule,
     MatFormFieldModule,
     MatCheckboxModule,
-    AngularFontAwesomeModule
+    AngularFontAwesomeModule,
+    ReactiveFormsModule
   ],
-  providers: [Customer],
+  providers: [Customer,Login],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
