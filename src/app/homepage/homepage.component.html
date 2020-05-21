@@ -403,10 +403,11 @@
 									</div>
 									<div class="product-overlay">
 										<div class="overlay-content">
-											<h2>{{i.price}}</h2>
-											<p>{{i.desc}}</p>
-											<a href="#" class="btn btn-default add-to-cart"><i
-													class="fa fa-shopping-cart"></i>Add to cart</a>
+											<h2>Price: {{i.price}}</h2>
+											<p>Description: {{i.description}}</p>
+											<p>Category Name: {{i.category.name}}</p>
+
+									<button class="btn btn-primary" (click)="onView(i)">View Details</button>
 										</div>
 									</div>
 								</div>
