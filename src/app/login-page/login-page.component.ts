@@ -1,6 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup } from '@angular/forms';
 import { Login } from '../login';
+import { HomeServiceService } from '../home-service.service';
+import { UserLogin } from '../user-login';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-login-page',
@@ -10,7 +13,7 @@ import { Login } from '../login';
 export class LoginPageComponent implements OnInit {
 
    //loginForm:FormGroup;
-  constructor(public login:Login) {
+  constructor(public login:Login,public service:HomeServiceService,public user:UserLogin,public router:Router) {
     
 
    }
@@ -19,7 +22,19 @@ export class LoginPageComponent implements OnInit {
   //login= new Login();
 
 
-   
+   onSignUp()
+   {
+     this.service.onSignUp(this.login).subscribe(response => console.log(response),err => alert(err)
+     );
+   }
+
+   onLogin()
+   {
+    this.service.onLogin(this.user).subscribe(response =>{ sessionStorage.setItem('user',this.user.username)
+                                                                       alert('Logged IN');
+                                                                        this.router.navigate(['']);   },err => alert(err)
+    );
+   }
    onSave()
    {
      

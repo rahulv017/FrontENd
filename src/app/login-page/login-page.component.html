@@ -148,14 +148,14 @@
 				<div class="col-sm-4 col-sm-offset-1">
 					<div class="login-form"><!--login form-->
 						<h2>Login to your account</h2>
-						<form action="#">
-							<input type="text" placeholder="Name" required/>
-							<input type="email" placeholder="Email Address" required/>
+						<form action="#"  #signUp="ngForm">
+							<input type="text" placeholder="Name" name="name" [(ngModel)]="user.username" required/>
+							<input type="password" placeholder="Password" name="password" [(ngModel)]="user.password"  required/>
 							<span>
 								<input type="checkbox" class="checkbox"> 
 								Keep me signed in
 							</span>
-							<button type="submit" class="btn btn-default">Login</button>
+							<button type="submit" [disabled]="signUp.form.invalid"  (click)="onLogin()" class="btn btn-primary">Login</button>
 						</form>
 					</div><!--/login form-->
 				</div>
@@ -182,7 +182,7 @@
 							<input type="tel"     [(ngModel)]="login.tel"   #tel="ngModel" pattern="^\d{10}$" [class.is-invalid]="tel.invalid&&tel.touched" name="tel"  placeholder="Mobile No"  class="form-control" required/>
 							<small class="text-danger" [class.d-none]="tel.valid||tel.untouched ">Mobile number should be of 10 digits</small>
 							</div>
-							<button type="submit" [disabled]="Loginform.form.invalid" class="btn btn-primary">Signup</button>
+							<button type="submit" [disabled]="Loginform.form.invalid" class="btn btn-primary" (click)="onSignUp()">Signup</button>
 						</form>
 					</div><!--/sign up form-->
 				</div>
