@@ -1,5 +1,4 @@
-﻿
-/*************************
+﻿/*************************
 *******Typography******
 **************************/
 @import url(http://fonts.googleapis.com/css?family=Roboto:400,300,400italic,500,700,100);
@@ -100,7 +99,7 @@ a#scrollUp i{
 }
 
 .social-icons ul li a i {
-  padding: 11px 15px;
+  padding: 2px 12px;
    transition: all 0.9s ease 0s;
   -moz-transition: all 0.9s ease 0s;
   -webkit-transition: all 0.9s ease 0s;
@@ -137,7 +136,7 @@ a#scrollUp i{
 }
 
 .header-middle .container .row {
-  border-bottom: 1px solid #f5f5f5;
+  border-bottom: 10px solid #000;
   margin-left: 0;
   margin-right: 0;
   padding-bottom: 20px;
@@ -152,22 +151,24 @@ a#scrollUp i{
 	padding-right:0;
 }
 
-.usa {
+.sign_in {
   border-radius: 0;
+  float: inline-end;
   color: #B4B1AB;
   font-size: 12px;
-  margin-right: 20px;
+  margin-left: 10px;
+  margin-right: 10px;
   padding: 2px 15px;
   margin-top: 10px;
 }
 
-.usa:hover {
+.sign_in:hover {
 	background:#FE980F;
 	color:#fff;
 	border-color:#FE980F;
 }
 
-.usa:active, .usa.active {
+.sign_in:active, .sign_in.active {
   background: none repeat scroll 0 0 #FE980F;
   box-shadow: inherit;
   outline: 0 none;
@@ -179,33 +180,36 @@ a#scrollUp i{
 }
 
 .dropdown-menu  li  a:hover, .dropdown-menu  li  a:focus {
-  background-color: #FE980F;
-  color: #FFFFFF;
+  background-color: #ffffff;
+  color: #000;
   font-family: 'Roboto', sans-serif;
   text-decoration: none;
 }
 
 
 .shop-menu ul li {
-	display:inline-block;
+  display:inline-block;
+  float: left;
+  margin-left: 50px;
   padding-left: 15px;
   padding-right: 15px;
 }
 
 .shop-menu ul li:last-child {
   padding-right: 0;
+  margin-right: 50px;
 }
 
 
 .shop-menu ul li a {
-  background: #FFFFFF;
+  /* background: #FFFFFF; */
   color: #696763;
   font-family: 'Roboto', sans-serif;
   font-size: 14px;
-  font-weight: 300;
+  /* font-weight: 300; */
   padding:0;
   padding-right: 0;
-  margin-top: 10px;
+  margin-top: 15px;
 }
 
 
@@ -216,7 +220,7 @@ a#scrollUp i{
 
 .shop-menu ul li a:hover {
 	color:#fe980f;
-	background:#fff;
+	/* background:#fff; */
 }
 
 
@@ -253,21 +257,53 @@ a#scrollUp i{
 }
 
 .search_box input {
-  background: #F0F0E9;
-  border: medium none;
-  color: #B2B2B2;
+  background: #f5f5f5;
+  border: thin solid #000000;
+  color:#000;
+  margin-right:0px;
+  margin-top: 10px;
+  margin-left: 30px;
   font-family: 'roboto';
   font-size: 12px;
   font-weight: 300;
   height: 35px;
+  width: 350px;
   outline: medium none;
   padding-left: 10px;
-  width: 155px;
-  background-image: url(../images/home/searchicon.png);
-  background-repeat: no-repeat;
-  background-position: 130px;
+}
+.search_box button {
+  float: right;
+  height: 35px;
+  width: fit-content;
+  padding: 0px 10px;
+  margin-top: 10px;
+  margin-right: 0px;
+  background: #ddd;
+  background-image: url("../images/home/search.png");
+  font-size: 12px;
+  border-left: thin solid #000;
+  border-top:  thin solid #000;
+  border-bottom:  thin solid #000;
+  /* cursor: pointer; */
 }
 
+
+@media screen and (max-width: 600px) {
+  .search_box {
+    float: none;
+  }
+  .topnav a, .topnav input[type=text], .topnav .search-container button {
+    float: none;
+    display: block;
+    text-align: left;
+    width: 100%;
+    margin: 0;
+    padding: 14px;
+  }
+  .topnav input[type=text] {
+    border: 1px solid #ccc;  
+  }
+}
 
 /*  Dropdown menu*/
 
@@ -2519,5 +2555,4 @@ h2.title {
 .contact-info .social-networks ul li a:hover{
   color: #FE980F;
 }
-
 

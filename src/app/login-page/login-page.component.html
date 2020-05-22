@@ -1,27 +1,29 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="">
-    <meta name="author" content="">
-    <title>Login | E-Shopper</title>
-    <!-- <link href="assets/css/bootstrap.min.css" rel="stylesheet"> -->
-    <link href="assets/css/prettyPhoto.css" rel="stylesheet">
-    <link href="assets/css/price-range.css" rel="stylesheet">
-    <link href="assets/css/animate.css" rel="stylesheet">
-	<link href="assets/css/main.css" rel="stylesheet" >
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="description" content="">
+	<meta name="author" content="">
+	<title>Login | E-Shopper</title>
+	<!-- <link href="assets/css/bootstrap.min.css" rel="stylesheet"> -->
+	<link href="assets/css/prettyPhoto.css" rel="stylesheet">
+	<link href="assets/css/price-range.css" rel="stylesheet">
+	<link href="assets/css/animate.css" rel="stylesheet">
+	<link href="assets/css/main.css" rel="stylesheet">
 	<link href="assets/css/responsive.css" rel="stylesheet">
-    <!--[if lt IE 9]>
+	<!--[if lt IE 9]>
     <script src="js/html5shiv.js"></script>
     <script src="js/respond.min.js"></script>
-    <![endif]-->       
-    <link rel="shortcut icon" href="images/ico/favicon.ico">
-    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="images/ico/apple-touch-icon-144-precomposed.png">
-    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="images/ico/apple-touch-icon-114-precomposed.png">
-    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="images/ico/apple-touch-icon-72-precomposed.png">
-    <link rel="apple-touch-icon-precomposed" href="images/ico/apple-touch-icon-57-precomposed.png">
-</head><!--/head-->
+    <![endif]-->
+	<link rel="shortcut icon" href="images/ico/favicon.ico">
+	<link rel="apple-touch-icon-precomposed" sizes="144x144" href="images/ico/apple-touch-icon-144-precomposed.png">
+	<link rel="apple-touch-icon-precomposed" sizes="114x114" href="images/ico/apple-touch-icon-114-precomposed.png">
+	<link rel="apple-touch-icon-precomposed" sizes="72x72" href="images/ico/apple-touch-icon-72-precomposed.png">
+	<link rel="apple-touch-icon-precomposed" href="images/ico/apple-touch-icon-57-precomposed.png">
+</head>
+<!--/head-->
 
 <body>
 	<!-- <header id="header">
@@ -141,56 +143,73 @@
 			</div>
 		</div>
 	</header> -->
-	
-	<section id="form"><!--form-->
+
+	<section id="form">
+		<!--form-->
 		<div class="container">
 			<div class="row">
 				<div class="col-sm-4 col-sm-offset-1">
-					<div class="login-form"><!--login form-->
+					<div class="login-form">
+						<!--login form-->
 						<h2>Login to your account</h2>
-						<form action="#"  #signUp="ngForm">
-							<input type="text" placeholder="Name" name="name" [(ngModel)]="user.username" required/>
-							<input type="password" placeholder="Password" name="password" [(ngModel)]="user.password"  required/>
+						<form action="#" #signUp="ngForm">
+							<input type="text" placeholder="Name" name="name" [(ngModel)]="user.username" required />
+							<input type="password" placeholder="Password" name="password" [(ngModel)]="user.password"
+								required />
 							<span>
-								<input type="checkbox" class="checkbox"> 
+								<input type="checkbox" class="checkbox">
 								Keep me signed in
 							</span>
-							<button type="submit" [disabled]="signUp.form.invalid"  (click)="onLogin()" class="btn btn-primary">Login</button>
+							<button type="submit" [disabled]="signUp.form.invalid" (click)="onLogin()"
+								class="btn btn-primary">Login</button>
 						</form>
-					</div><!--/login form-->
+					</div>
+					<!--/login form-->
 				</div>
 				<div class="col-sm-1">
 					<h2 class="or">OR</h2>
 				</div>
 				<div class="col-sm-4">
-					<div class="signup-form"><!--sign up form-->
+					<div class="signup-form">
+						<!--sign up form-->
 						<h2>New User Signup!</h2>
-						<form action="#" #Loginform="ngForm" >
+						<form action="#" #Loginform="ngForm">
 							<!-- {{Loginform.value | json}} -->
 							<div class="form-group">
-							<input type="text" [(ngModel)]="login.name" #name="ngModel" placeholder="Name" name="name" [class.is-invalid]="name.invalid&&name.touched"  class="form-control" required />
-							<small class="text-danger" [class.d-none]="name.valid || name.untouched">Name is Required</small>
-                            <!-- {{name.touched}} -->
-							</div>  
-							<div class="form-group"> 
-							<input type="email"  [(ngModel)]="login.email" #email="ngModel" name="email" placeholder="Email Address"  class="form-control" required/>
+								<input type="text" [(ngModel)]="login.fullname" #name="ngModel" placeholder="Name"
+									name="name" [class.is-invalid]="name.invalid&&name.touched" class="form-control"
+									required />
+								<small class="text-danger" [class.d-none]="name.valid || name.untouched">Name is
+									Required</small>
+								<!-- {{name.touched}} -->
 							</div>
 							<div class="form-group">
-							<input type="password" [(ngModel)]="login.password" #pass="ngModel" name="password" placeholder="Password" class="form-control" required/>
+								<input type="email" [(ngModel)]="login.email" #email="ngModel" name="email"
+									placeholder="Email Address" class="form-control" required />
 							</div>
 							<div class="form-group">
-							<input type="tel"     [(ngModel)]="login.tel"   #tel="ngModel" pattern="^\d{10}$" [class.is-invalid]="tel.invalid&&tel.touched" name="tel"  placeholder="Mobile No"  class="form-control" required/>
-							<small class="text-danger" [class.d-none]="tel.valid||tel.untouched ">Mobile number should be of 10 digits</small>
+								<input type="password" [(ngModel)]="login.password" #pass="ngModel" name="password"
+									placeholder="Password" class="form-control" required />
 							</div>
-							<button type="submit" [disabled]="Loginform.form.invalid" class="btn btn-primary" (click)="onSignUp()">Signup</button>
+							<div class="form-group">
+								<input type="number" [(ngModel)]="login.mobile" #tel="ngModel" pattern="^\d{10}$"
+									[class.is-invalid]="tel.invalid&&tel.touched" name="tel" placeholder="Mobile No"
+									class="form-control" required />
+								<small class="text-danger" [class.d-none]="tel.valid||tel.untouched ">Mobile number
+									should be of 10 digits</small>
+							</div>
+							<button type="submit" [disabled]="Loginform.form.invalid" class="btn btn-primary"
+								(click)="onSignUp()">Signup</button>
 						</form>
-					</div><!--/sign up form-->
+					</div>
+					<!--/sign up form-->
 				</div>
 			</div>
 		</div>
-	</section><!--/form-->
-	
-	
+	</section>
+	<!--/form-->
+
+
 	<!-- <footer id="footer">
 		<div class="footer-top">
 			<div class="container">
@@ -348,14 +367,15 @@
 		</div>
 		
 	</footer> -->
-	
 
-  <app-footer></app-footer>
-    <script src="/src/assets/js/jquery.js"></script>
+
+	<app-footer></app-footer>
+	<script src="/src/assets/js/jquery.js"></script>
 	<script src="/src/assets/js/bootstrap.min.js"></script>
 	<script src="/src/assets/js/jquery.scrollUp.min.js"></script>
 	<script src="/src/assets/js/price-range.js"></script>
-    <script src="/src/assets/js/jquery.prettyPhoto.js"></script>
-    <script src="assets/js/main.js"></script>
+	<script src="/src/assets/js/jquery.prettyPhoto.js"></script>
+	<script src="assets/js/main.js"></script>
 </body>
+
 </html>

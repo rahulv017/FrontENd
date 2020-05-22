@@ -1,15 +1,15 @@
 import { BrowserModule } from '@angular/platform-browser';
-import {NgModule} from '@angular/core';
-import {ReactiveFormsModule} from '@angular/forms'
+import { NgModule } from '@angular/core';
+import { ReactiveFormsModule } from '@angular/forms'
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { AngularFontAwesomeModule } from 'angular-font-awesome';
-import  {FormsModule} from '@angular/forms';
+import { FormsModule } from '@angular/forms';
 import { Customer } from './customer';
-import {MatCheckboxModule} from '@angular/material/checkbox';
-import {MatSliderModule} from '@angular/material/slider'; 
-import {MatFormFieldModule} from '@angular/material/form-field';
-import {MatCardModule} from '@angular/material/card'; 
+import { MatCheckboxModule } from '@angular/material/checkbox';
+import { MatSliderModule } from '@angular/material/slider';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatCardModule } from '@angular/material/card';
 import { HttpClientModule } from '@angular/common/http';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HomepageComponent } from './homepage/homepage.component';
@@ -18,6 +18,7 @@ import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
 import { Login } from './login';
 import { ProductPageComponent } from './product-page/product-page.component';
+import { UserLogin } from './user-login';
 
 @NgModule({
   declarations: [
@@ -41,7 +42,7 @@ import { ProductPageComponent } from './product-page/product-page.component';
     AngularFontAwesomeModule,
     ReactiveFormsModule
   ],
-  providers: [Customer,Login],
+  providers: [Customer, Login, UserLogin],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
