@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import {ActivatedRoute} from '@angular/router';
+import { ActivatedRoute } from '@angular/router';
 import { HomeServiceService } from '../home-service.service';
 import { Observable } from 'rxjs';
 import { Products } from '../products';
@@ -10,14 +10,14 @@ import { Products } from '../products';
 })
 export class CategoryProductsComponent implements OnInit {
 
-  constructor(public active:ActivatedRoute,public service:HomeServiceService) { }
+  constructor(public active: ActivatedRoute, public service: HomeServiceService) { }
   id;
-  cat_items:Observable<Products[]>
+  cat_items: Observable<Products[]>
   ngOnInit() {
-   this.id=parseInt(this.active.snapshot.paramMap.get('id'));
-   alert(`Customer Id is ${this.id}`);
-   this.cat_items=this.service.getCategoryProducts(this.id);
-    
+    this.id = parseInt(this.active.snapshot.paramMap.get('id'));
+    alert(`Customer Id is ${this.id}`);
+    this.cat_items = this.service.getCategoryProducts(this.id);
+
 
 
   }

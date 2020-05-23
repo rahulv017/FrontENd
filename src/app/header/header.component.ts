@@ -8,13 +8,13 @@ import { Router } from '@angular/router';
 })
 export class HeaderComponent implements OnInit {
 
-  constructor(private router:Router) { }
-  user=sessionStorage.getItem('user');
+  constructor(private router: Router) { }
+  user
   ngOnInit() {
+    this.user = sessionStorage.getItem('user');
   }
 
-  onLogout()
-  {
+  onLogout() {
     sessionStorage.clear();
     window.location.reload();
     //this.router.navigate(['']);

@@ -49,7 +49,7 @@ export class HomeServiceService {
   }
 
   getCategoryProducts(data: number): Observable<Products[]> {
-    let url = `http://localhost:4000/category/${data}`;
-    return this.http.post<Products[]>(url, data);
+    let url = `http://localhost:4000/categories/${data}/products`;
+    return this.http.get<Products[]>(url, data);
   }
 }
