@@ -30,9 +30,12 @@ export class LoginPageComponent implements OnInit {
 
    onLogin()
    {
-    this.service.onLogin(this.user).subscribe(response =>{ sessionStorage.setItem('user',this.user.email)
+    this.service.onLogin(this.user).subscribe(response =>{ if(response!=null){sessionStorage.setItem('user',this.user.email)
                                                                        alert('Logged IN');
-                                                                        this.router.navigate(['']);   },err => alert(err)
+                                                                        this.router.navigate(['']);}
+                                                                      else{
+                                                                        alert(`Enter credentials correctly`);
+                                                                      } }  ,err => alert(err)
     );
    }
    onSave()
