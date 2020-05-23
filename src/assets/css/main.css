@@ -139,8 +139,8 @@ a#scrollUp i{
   border-bottom: 10px solid #000;
   margin-left: 0;
   margin-right: 0;
-  padding-bottom: 20px;
-  padding-top: 20px;
+  padding-bottom: 10px;
+  padding-top: 10px;
 }
 
 .header-middle .container .row .col-sm-4{
@@ -151,15 +151,93 @@ a#scrollUp i{
 	padding-right:0;
 }
 
+.search_box input {
+  background: #f5f5f5;
+  border: thin solid #000000;
+  color:#000;
+  margin-right:0px;
+  margin-top: 10px;
+  margin-left: 50px;
+  margin-bottom: 10px;
+  font-family: 'roboto';
+  font-size: 12px;
+  font-weight: 300;
+  height: 35px;
+  width: 500px;
+  outline: medium none;
+  padding-left: 10px;
+}
+.search_box button {
+  float: right;
+  font-size: 18;
+  height: 35px;
+  width: 100px;
+  padding: 0px 0px;
+  margin-top: 10px;
+  margin-right: 25px;
+  margin-bottom: 10px;
+  background: #ddd;
+  background-image: url("../images/home/search.png");
+  /* font-size: 12px; */
+  border-left: thin solid #000;
+  border-top:  thin solid #000;
+  border-bottom:  thin solid #000;
+  /* cursor: pointer; */
+}
+
+.shop-menu{
+  height: inherit;
+  width: inherit;
+  margin-left: 25px;
+  margin-bottom: 0px;
+  margin-right: 0px;
+}
+.shop-menu ul li {
+  display:inline-block;
+  grid-area: ;
+  padding-left: 10px;
+  padding-right: 10px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+.shop-menu ul li:last-child {
+  /* padding-right: 0;
+  margin-right: 0px; */
+}
+
+
+.shop-menu ul li a {
+  /* background: #FFFFFF; */
+  color: #696763;
+  font-family: 'Roboto', sans-serif;
+  font-size: 14px;
+  /* font-weight: 300; */
+  /* padding:0;
+  padding-right: 0;
+  margin-top: 15px; */
+}
+
+
+.shop-menu ul li a i{
+	margin-right:3px;
+}
+
+
+.shop-menu ul li a:hover {
+	color:#fe980f;
+	/* background:#fff; */
+}
+
 .sign_in {
   border-radius: 0;
-  float: inline-end;
+  float: right;
   color: #B4B1AB;
   font-size: 12px;
-  margin-left: 10px;
-  margin-right: 10px;
-  padding: 2px 15px;
-  margin-top: 10px;
+  margin-left: px;
+  /* margin-right: 10px; */
+  padding: 10px 10px;
+  /* margin-top: 10px; */
 }
 
 .sign_in:hover {
@@ -185,44 +263,6 @@ a#scrollUp i{
   font-family: 'Roboto', sans-serif;
   text-decoration: none;
 }
-
-
-.shop-menu ul li {
-  display:inline-block;
-  float: left;
-  margin-left: 50px;
-  padding-left: 15px;
-  padding-right: 15px;
-}
-
-.shop-menu ul li:last-child {
-  padding-right: 0;
-  margin-right: 50px;
-}
-
-
-.shop-menu ul li a {
-  /* background: #FFFFFF; */
-  color: #696763;
-  font-family: 'Roboto', sans-serif;
-  font-size: 14px;
-  /* font-weight: 300; */
-  padding:0;
-  padding-right: 0;
-  margin-top: 15px;
-}
-
-
-.shop-menu ul li a i{
-	margin-right:3px;
-}
-
-
-.shop-menu ul li a:hover {
-	color:#fe980f;
-	/* background:#fff; */
-}
-
 
 .header-bottom {
   padding-bottom: 30px;
@@ -256,36 +296,6 @@ a#scrollUp i{
 	color:#fdb45e;
 }
 
-.search_box input {
-  background: #f5f5f5;
-  border: thin solid #000000;
-  color:#000;
-  margin-right:0px;
-  margin-top: 10px;
-  margin-left: 30px;
-  font-family: 'roboto';
-  font-size: 12px;
-  font-weight: 300;
-  height: 35px;
-  width: 350px;
-  outline: medium none;
-  padding-left: 10px;
-}
-.search_box button {
-  float: right;
-  height: 35px;
-  width: fit-content;
-  padding: 0px 10px;
-  margin-top: 10px;
-  margin-right: 0px;
-  background: #ddd;
-  background-image: url("../images/home/search.png");
-  font-size: 12px;
-  border-left: thin solid #000;
-  border-top:  thin solid #000;
-  border-bottom:  thin solid #000;
-  /* cursor: pointer; */
-}
 
 
 @media screen and (max-width: 600px) {

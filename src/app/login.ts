@@ -1,8 +1,8 @@
 export class Login {
 
-    fullname: string;
+    fullname: string = "";
     password: string;
     email: string;
-    mobile: number;
+    mobile: number = 0;
 
 }

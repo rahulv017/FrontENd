@@ -6,6 +6,7 @@ import { Login } from './login';
 import { catchError } from 'rxjs/operators'
 import { UserLogin } from './user-login';
 import { Category } from './category';
+import { Customer } from './customer';
 
 @Injectable({
   providedIn: 'root'
@@ -15,7 +16,7 @@ export class HomeServiceService {
   constructor(public http: HttpClient) { }
 
   getFeatureProducts(): Observable<Products[]> {
-    let url = "http://localhost:4000/Products";
+    let url = "http://localhost:4000/products";
     return this.http.get<Products[]>(url);
   }
 
@@ -30,9 +31,10 @@ export class HomeServiceService {
     }))
   }
 
-  onLogin(data: UserLogin) {
-    let url = "http://localhost:3000/login";
-    return this.http.post(url, data).pipe(catchError(err => {
+  onLogin(data: UserLogin): Observable<Customer> {
+    console.log(JSON.stringify(data));
+    let url = `http://localhost:4000/home/${data.email}/${data.password}`;
+    return this.http.get<Customer>(url).pipe(catchError(err => {
       if (err instanceof HttpErrorResponse) {
         console.error(err);
         return throwError(
@@ -41,15 +43,13 @@ export class HomeServiceService {
     }))
   }
 
-  getAllCategories():Observable<Category[]>
-  {
+  getAllCategories(): Observable<Category[]> {
     let url = "http://localhost:4000/categories";
     return this.http.get<Category[]>(url);
   }
 
-  getCategoryProducts(data:number):Observable<Products[]>
-  {
+  getCategoryProducts(data: number): Observable<Products[]> {
     let url = "http://localhost:4000/category/{{data}}";
-    return this.http.post<Products[]>(url,data);
+    return this.http.post<Products[]>(url, data);
   }
 }
