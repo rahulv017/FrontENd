@@ -110,7 +110,8 @@
 										<!-- <span class="caret"></span> -->
 									</button>
 									<ul class="dropdown-menu">
-										<li><a routerLink="/login"><i class="fa fa-lock"></i>Login</a></li>
+										<li *ngIf="!user"><a routerLink="/login"><i class="fa fa-lock"></i>Login</a></li>
+										<li *ngIf="user"><a routerLink="/logout"><i class="fa fa-lock"></i>{{user}} Logout</a></li>
 										<li><a href="#"><i class="fa fa-user"></i>Account</a></li>
 										<li><a href="#"><i class="fa fa-star"></i>Wishlist</a></li>
 									</ul>
