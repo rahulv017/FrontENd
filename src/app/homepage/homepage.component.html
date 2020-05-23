@@ -243,16 +243,17 @@
 						<h2>Category</h2>
 						<div class="panel-group category-products" id="accordian">
 							<!--category-productsr-->
-							<div class="panel panel-default">
+							<div *ngFor="let k of item_categories | async" class="panel panel-default">
 								<div class="panel-heading">
 									<h4 class="panel-title">
-										<a data-toggle="collapse" data-parent="#accordian" href="#sportswear">
+										<a data-toggle="collapse" data-parent="#accordian"  routerLink="category/{{k.id}}">
 											<span class="badge pull-right"><i class="fa fa-plus"></i></span>
-											Sportswear
+											{{k.name}}
+											<small>{{k.description}}</small>
 										</a>
 									</h4>
 								</div>
-								<div id="sportswear" class="panel-collapse collapse">
+								<!-- <div id="sportswear" class="panel-collapse collapse">
 									<div class="panel-body">
 										<ul>
 											<li><a href="#">Nike </a></li>
@@ -262,9 +263,9 @@
 											<li><a href="#">ASICS </a></li>
 										</ul>
 									</div>
-								</div>
+								</div> -->
 							</div>
-							<div class="panel panel-default">
+							<!-- <div class="panel panel-default">
 								<div class="panel-heading">
 									<h4 class="panel-title">
 										<a data-toggle="collapse" data-parent="#accordian" href="#mens">
@@ -347,6 +348,7 @@
 									<h4 class="panel-title"><a href="#">Shoes</a></h4>
 								</div>
 							</div>
+						</div> -->
 						</div>
 						<!--/category-products-->
 

@@ -4,6 +4,7 @@ import { HomeServiceService } from '../home-service.service';
 import { Observable } from 'rxjs';
 import { ProductService } from '../product.service';
 import { Router } from '@angular/router';
+import { Category } from '../category';
 
 @Component({
   selector: 'app-homepage',
@@ -15,8 +16,10 @@ export class HomepageComponent implements OnInit {
   constructor(private service:HomeServiceService,private prodS:ProductService,private router:Router) { }
   // list_prod=ELE;
    items:Observable<any>;
+   item_categories:Observable<Category[]>
   ngOnInit() {
     this.items=this.service.getFeatureProducts();
+    this.item_categories=this.service.getAllCategories();
   }
 
   onView(data:Products)
@@ -24,6 +27,11 @@ export class HomepageComponent implements OnInit {
     this.prodS.setProd(data);
     this.router.navigate(['/product']);
 
+  }
+
+  onCategory(data:Category)
+  {
+     this.router.navigate(['/category',data.id]);
   }
 
 }
@@ -36,3 +44,9 @@ export class HomepageComponent implements OnInit {
 //     {"name":"Abhishek Mc","desc":"Nalaayak","id":1,"price":8},
 //     {"name":"Shreyansh Chutiya","desc":"Nalaayak","id":1,"price":10}
 // ]
+
+
+let ELE:Category[]=[
+  {"id":1,"name":"Shreyansh","description":"Saste Nashe"},
+  {"id":2,"name":"Abhash","description":"Mehenge Nashe Nashe"}
+]

@@ -30,7 +30,7 @@ export class LoginPageComponent implements OnInit {
 
    onLogin()
    {
-    this.service.onLogin(this.user).subscribe(response =>{ sessionStorage.setItem('user',this.user.username)
+    this.service.onLogin(this.user).subscribe(response =>{ sessionStorage.setItem('user',this.user.email)
                                                                        alert('Logged IN');
                                                                         this.router.navigate(['']);   },err => alert(err)
     );
