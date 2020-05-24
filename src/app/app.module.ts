@@ -5,7 +5,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { AngularFontAwesomeModule } from 'angular-font-awesome';
 import { FormsModule } from '@angular/forms';
-import { Customer } from './customer';
+// import { Customer } from './customer';
 import { MatCheckboxModule } from '@angular/material/checkbox';
 import { MatSliderModule } from '@angular/material/slider';
 import { MatFormFieldModule } from '@angular/material/form-field';
@@ -46,7 +46,7 @@ import { CartPageComponent } from './cart-page/cart-page.component';
     AngularFontAwesomeModule,
     ReactiveFormsModule
   ],
-  providers: [Customer, Login, UserLogin],
+  providers: [Login, UserLogin],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
