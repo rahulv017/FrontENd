@@ -54,9 +54,10 @@ export class HomeServiceService {
   }
 
   addToCart(data: Products, items: number) {
-    let url = `http://localhost:4001/categories/${sessionStorage.getItem('id')}`;
-    let JsonData = { "product": data, "date": new Date(), "items": items };
-    return this.http.post<Products[]>(url, JsonData);
+    let url = `http://localhost:4001/customer/${sessionStorage.getItem('id')}/products/${data.product_id}/cart`;
+
+    let JsonData = { "date": "2012-03-19T07:22Z", "amount": items };
+    return this.http.post(url, JsonData);
 
   }
 }

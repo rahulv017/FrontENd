@@ -8,17 +8,15 @@ export class AddCartService {
 
   constructor() { }
 
-  product:Products[];
-  
-  setProduct(data:Products)
-  {
-      this.product.push(data);
+  product = new Array<Products>();
+
+  setProduct(data: Products) {
+    this.product.push(data);
 
   }
 
-  getProducts():Products[]
-  {
-    let temp=this.product;
+  getProducts(): Products[] {
+    let temp = this.product;
     return temp;
   }
 
