@@ -20,6 +20,7 @@ import { Login } from './login';
 import { ProductPageComponent } from './product-page/product-page.component';
 import { UserLogin } from './user-login';
 import { CategoryProductsComponent } from './category-products/category-products.component';
+import { CartPageComponent } from './cart-page/cart-page.component';
 
 @NgModule({
   declarations: [
@@ -29,7 +30,8 @@ import { CategoryProductsComponent } from './category-products/category-products
     HeaderComponent,
     FooterComponent,
     ProductPageComponent,
-    CategoryProductsComponent
+    CategoryProductsComponent,
+    CartPageComponent
   ],
   imports: [
     BrowserModule,
