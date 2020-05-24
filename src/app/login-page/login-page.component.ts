@@ -31,6 +31,7 @@ export class LoginPageComponent implements OnInit {
    onLogin()
    {
     this.service.onLogin(this.user).subscribe(response =>{ if(response!=null){sessionStorage.setItem('user',this.user.email)
+                                                                               sessionStorage.setItem('id',response.id.toString())
                                                                        alert('Logged IN');
                                                                         this.router.navigate(['']);}
                                                                       else{

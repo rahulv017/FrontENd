@@ -16,10 +16,10 @@ export class HomepageComponent implements OnInit {
   constructor(private service:HomeServiceService,private prodS:ProductService,private router:Router) { }
   // list_prod=ELE;
    items:Observable<any>;
-   item_categories:Observable<Category[]>
+  
   ngOnInit() {
     this.items=this.service.getFeatureProducts();
-    this.item_categories=this.service.getAllCategories();
+   
   }
 
   onView(data:Products)
@@ -46,7 +46,3 @@ export class HomepageComponent implements OnInit {
 // ]
 
 
-let ELE:Category[]=[
-  {"id":1,"name":"Shreyansh","description":"Saste Nashe"},
-  {"id":2,"name":"Abhash","description":"Mehenge Nashe Nashe"}
-]
