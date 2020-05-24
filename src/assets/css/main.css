@@ -73,7 +73,7 @@ a#scrollUp i {
 **************************/
 
 .header_top {
-    background: none repeat scroll 0 0 #F0F0E9;
+    background: none repeat scroll 0 0 #DE3222;
 }
 
 .contactinfo ul li:first-child {
@@ -143,6 +143,7 @@ a#scrollUp i {
     margin-right: 0;
     padding-bottom: 10px;
     padding-top: 10px;
+    background-color: #000;
 }
 
 .header-middle .container .row .col-sm-4 {
@@ -236,7 +237,7 @@ a#scrollUp i {
     float: right;
     color: #B4B1AB;
     font-size: 12px;
-    margin-left: px;
+    margin-left: 25px;
     /* margin-right: 10px; */
     padding: 10px 10px;
     /* margin-top: 10px; */
@@ -250,7 +251,7 @@ a#scrollUp i {
 
 .sign_in:active,
 .sign_in.active {
-    background: none repeat scroll 0 0 #FE980F;
+    /* background: none repeat scroll 0 0 #FE980F; */
     box-shadow: inherit;
     outline: 0 none;
 }
