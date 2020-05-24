@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute,ParamMap } from '@angular/router';
+import { ActivatedRoute, ParamMap } from '@angular/router';
 import { HomeServiceService } from '../home-service.service';
 import { Observable } from 'rxjs';
 import { Products } from '../products';
@@ -11,17 +11,17 @@ import { AddCartService } from '../add-cart.service';
 })
 export class CategoryProductsComponent implements OnInit {
 
-  constructor(public active: ActivatedRoute, public service: HomeServiceService,public cartS:AddCartService) { }
+  constructor(public active: ActivatedRoute, public service: HomeServiceService, public cartS: AddCartService) { }
   id;
   cat_items: Observable<Products[]>
-  num_items:number;
+  num_items: number;
   ngOnInit() {
     this.id = parseInt(this.active.snapshot.paramMap.get('id'));
-    
-    this.active.paramMap.subscribe((params:ParamMap) =>{
-          let id= parseInt(params.get('id'));
-          alert(`Customer Id is ${this.id}`);
-    this.cat_items = this.service.getCategoryProducts(this.id);
+
+    this.active.paramMap.subscribe((params: ParamMap) => {
+      let id = parseInt(params.get('id'));
+      // alert(`Category Id is ${id}`);
+      this.cat_items = this.service.getCategoryProducts(id);
 
     });
 
@@ -29,10 +29,10 @@ export class CategoryProductsComponent implements OnInit {
 
   }
 
-  onAddCart(data:Products)
-  {
-    this.service.addToCart(data,this.num_items).subscribe();
-      this.cartS.setProduct(data);
+
+  onAddCart(data: Products) {
+    this.service.addToCart(data, this.num_items).subscribe();
+    this.cartS.setProduct(data);
   }
 
 }
