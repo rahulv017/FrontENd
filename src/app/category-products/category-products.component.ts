@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute,ParamMap } from '@angular/router';
 import { HomeServiceService } from '../home-service.service';
 import { Observable } from 'rxjs';
 import { Products } from '../products';
@@ -17,8 +17,13 @@ export class CategoryProductsComponent implements OnInit {
   num_items:number;
   ngOnInit() {
     this.id = parseInt(this.active.snapshot.paramMap.get('id'));
-    alert(`Customer Id is ${this.id}`);
+    
+    this.active.paramMap.subscribe((params:ParamMap) =>{
+          let id= parseInt(params.get('id'));
+          alert(`Customer Id is ${this.id}`);
     this.cat_items = this.service.getCategoryProducts(this.id);
+
+    });
 
 
 
