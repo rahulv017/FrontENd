@@ -14,7 +14,7 @@ export class CategoryProductsComponent implements OnInit {
   constructor(public active: ActivatedRoute, public service: HomeServiceService, public cartS: AddCartService) { }
   id;
   cat_items: Observable<Products[]>
-  num_items: number;
+  num_items: number=0;
   ngOnInit() {
     this.id = parseInt(this.active.snapshot.paramMap.get('id'));
 

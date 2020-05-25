@@ -16,10 +16,11 @@ export class HomepageComponent implements OnInit {
   constructor(private service:HomeServiceService,private prodS:ProductService,private router:Router) { }
   // list_prod=ELE;
    items:Observable<any>;
-  
+   item_categories: Observable<Category[]>
   ngOnInit() {
     this.items=this.service.getFeatureProducts();
-   
+    this.item_categories = this.service.getAllCategories();
+     
   }
 
   onView(data:Products)
