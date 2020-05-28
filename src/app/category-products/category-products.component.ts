@@ -4,6 +4,7 @@ import { HomeServiceService } from '../home-service.service';
 import { Observable } from 'rxjs';
 import { Products } from '../products';
 import { AddCartService } from '../add-cart.service';
+import { Category } from '../category';
 @Component({
   selector: 'app-category-products',
   templateUrl: './category-products.component.html',
@@ -15,6 +16,7 @@ export class CategoryProductsComponent implements OnInit {
   id;
   cat_items: Observable<Products[]>
   num_items: number=0;
+  item_categories: Observable<Category[]>
   ngOnInit() {
     this.id = parseInt(this.active.snapshot.paramMap.get('id'));
 
@@ -24,6 +26,7 @@ export class CategoryProductsComponent implements OnInit {
       this.cat_items = this.service.getCategoryProducts(id);
 
     });
+    this.item_categories = this.service.getAllCategories();
 
 
 
