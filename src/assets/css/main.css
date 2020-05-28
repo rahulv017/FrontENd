@@ -244,7 +244,8 @@ a#scrollUp i {
     /* margin-top: 10px; */
 }
 
-.sign_in:hover {
+.sign_in:hover,
+.sign_in:focus {
     background-color: rgb(145, 20, 9);
     color: #fff;
 }
@@ -374,7 +375,7 @@ ul.sub-menu {
 }
 
 .navbar-nav li ul.sub-menu li a:hover {
-    color: #FDB45E;
+    color: #DE3222;
 }
 
 .fa-angle-down {
@@ -572,7 +573,7 @@ ul.sub-menu {
 }
 
 .searchform button {
-    background: #FE980F;
+    background: #DE3222;
     border: medium none;
     border-radius: 0;
     margin-left: -5px;
@@ -655,7 +656,7 @@ ul.sub-menu {
 }
 
 .item h1 span {
-    color: #FE980F;
+    color: #DE3222;
 }
 
 .item h2 {
@@ -675,7 +676,7 @@ ul.sub-menu {
 }
 
 .get {
-    background: #FE980F;
+    background: #DE3222;
     border: 0 none;
     border-radius: 0;
     color: #FFFFFF;
@@ -713,7 +714,7 @@ ul.sub-menu {
 
 .left-sidebar h2,
 .brands_products h2 {
-    color: #FE980F;
+    color: #DE3222;
     font-family: 'Roboto', sans-serif;
     font-size: 18px;
     font-weight: 700;
@@ -883,7 +884,7 @@ h2.title:before {
 }
 
 h2.title {
-    color: #FE980F;
+    color: #DE3222;
     font-family: 'Roboto', sans-serif;
     font-size: 18px;
     font-weight: 700;
@@ -911,7 +912,7 @@ h2.title {
 }
 
 .productinfo h2 {
-    color: #FE980F;
+    color: #DE3222;
     font-family: 'Roboto', sans-serif;
     font-size: 24px;
     font-weight: 700;
@@ -940,7 +941,7 @@ h2.title {
 }
 
 .product-overlay {
-    background: #FE980F;
+    background: #DE3222;
     top: 0;
     display: none;
     height: 0;
@@ -997,7 +998,7 @@ h2.title {
 }
 
 .add-to-cart:hover {
-    background: #FE980F;
+    background: #DE3222;
     border: 0 none;
     border-radius: 0;
     color: #FFFFFF;
@@ -1012,7 +1013,7 @@ h2.title {
 }
 
 .add-to-cart:hover {
-    background: #FE980F;
+    background: #DE3222;
     color: #FFFFFF;
 }
 
@@ -1101,7 +1102,7 @@ h2.title {
 }
 
 .recommended-item-control i {
-    background: none repeat scroll 0 0 #FE980F;
+    background: none repeat scroll 0 0 #DE3222;
     color: #FFFFFF;
     font-size: 20px;
     padding: 4px 10px;
@@ -1298,7 +1299,7 @@ h2.title {
 }
 
 .product-information span span {
-    color: #FE980F;
+    color: #DE3222;
     float: left;
     font-family: 'Roboto', sans-serif;
     font-size: 30px;
@@ -1331,7 +1332,7 @@ h2.title {
 }
 
 .cart {
-    background: #FE980F;
+    background: #DE3222;
     border: 0 none;
     border-radius: 0;
     color: #FFFFFF;
@@ -1527,7 +1528,7 @@ h2.title {
 
 .login-form form button,
 .signup-form form button {
-    background: #FE980F;
+    background: #DE3222;
     border: medium none;
     border-radius: 0;
     color: #FFFFFF;
@@ -1548,7 +1549,7 @@ h2.title {
 }
 
 .or {
-    background: #FE980F;
+    background: #DE3222;
     border-radius: 40px;
     color: #FFFFFF;
     font-family: 'Roboto', sans-serif;
@@ -1580,7 +1581,7 @@ h2.title {
 }
 
 .breadcrumbs .breadcrumb li a {
-    background: #FE980F;
+    background: #DE3222;
     color: #FFFFFF;
     padding: 3px 7px;
 }
@@ -1607,7 +1608,7 @@ h2.title {
 }
 
 #cart_items .cart_info .cart_menu {
-    background: #FE980F;
+    background: #DE3222;
     color: #fff;
     font-size: 16px;
     font-family: 'Roboto', sans-serif;
@@ -1656,7 +1657,7 @@ h2.title {
 }
 
 #cart_items .cart_info .cart_total_price {
-    color: #FE980F;
+    color: #DE3222;
     font-size: 24px;
 }
 
@@ -1801,7 +1802,7 @@ textarea {
 
 .update,
 .check_out {
-    background: #FE980F;
+    background: #DE3222;
     border-radius: 0;
     color: #FFFFFF;
     margin-top: 18px;
@@ -1868,7 +1869,7 @@ textarea {
 }
 
 .checkout-options .nav li a {
-    color: #FE980F;
+    color: #DE3222;
     font-size: 18px;
     font-weight: normal;
     padding: 0
@@ -1908,7 +1909,7 @@ textarea {
 }
 
 .shopper-info .btn-primary {
-    background: #FE980F;
+    background: #DE3222;
     border: 0 none;
     border-radius: 0;
     margin-right: 15px;
@@ -1987,7 +1988,7 @@ textarea {
 }
 
 #cart_items .cart_info .table.table-condensed.total-result span {
-    color: #FE980F;
+    color: #DE3222;
     font-weight: 700;
     font-size: 16px
 }
@@ -2371,7 +2372,7 @@ textarea {
 }
 
 .btn.btn-primary {
-    background: #FE980F;
+    background: #DE3222;
     border: 0 none;
     border-radius: 0;
     margin-top: 16px;
@@ -2442,7 +2443,7 @@ textarea {
 #contact-page .form-control:focus,
 #contact-page .form-control:hover {
     box-shadow: inherit;
-    border-color: #FDB45E;
+    border-color: #DE3222;
 }
 
 #contact-page .contact-info {
@@ -2493,5 +2494,5 @@ textarea {
 }
 
 .contact-info .social-networks ul li a:hover {
-    color: #FE980F;
+    color: #DE3222;
 }
