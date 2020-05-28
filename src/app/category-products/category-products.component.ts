@@ -1,10 +1,11 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute, ParamMap } from '@angular/router';
+import { ActivatedRoute, ParamMap, Router } from '@angular/router';
 import { HomeServiceService } from '../home-service.service';
 import { Observable } from 'rxjs';
 import { Products } from '../products';
 import { AddCartService } from '../add-cart.service';
 import { Category } from '../category';
+import { ProductService } from '../product.service';
 @Component({
   selector: 'app-category-products',
   templateUrl: './category-products.component.html',
@@ -12,7 +13,7 @@ import { Category } from '../category';
 })
 export class CategoryProductsComponent implements OnInit {
 
-  constructor(public active: ActivatedRoute, public service: HomeServiceService, public cartS: AddCartService) { }
+  constructor(public active: ActivatedRoute, public service: HomeServiceService, public cartS: AddCartService,public router:Router,public prodS:ProductService) { }
   id;
   cat_items: Observable<Products[]>
   num_items: number=0;
@@ -36,6 +37,14 @@ export class CategoryProductsComponent implements OnInit {
   onAddCart(data: Products) {
     this.service.addToCart(data, this.num_items).subscribe();
     this.cartS.setProduct(data);
+  }
+
+  onView(data:Products)
+  {
+    this.service.getProduct(data).subscribe();
+    this.prodS.setProd(data);
+    this.router.navigate(['/product']);
+
   }
 
 }
