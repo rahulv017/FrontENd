@@ -61,8 +61,7 @@ export class HomeServiceService {
 
   }
 
-  getProduct(data:Products):Observable<Products>
-  {
+  getProduct(data: Products): Observable<Products> {
     let url = `http://localhost:4000/categories/${data.category.category_id}/products/${data.product_id}`;
     return this.http.get<Products>(url);
   }

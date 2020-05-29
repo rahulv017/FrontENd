@@ -45,7 +45,7 @@ html {
 }
 
 body {
-    margin: 0
+    margin: 0;
 }
 
 a {
@@ -2681,8 +2681,8 @@ input[type="button"].btn-block {
 
 /* @font-face {
     font-family: 'Glyphicons Halflings';
-    src: url('assets/fonts/glyphicons-halflings-regular.eot');
-    src: url('assets/fonts/glyphicons-halflings-regular.eot?#iefix') format('embedded-opentype'), url('../fonts/glyphicons-halflings-regular.woff') format('woff'), url('../fonts/glyphicons-halflings-regular.ttf') format('truetype'), url('../fonts/glyphicons-halflings-regular.svg#glyphicons-halflingsregular') format('svg')
+    src: url('../fonts/glyphicons-halflings-regular.eot');
+    src: url('../fonts/glyphicons-halflings-regular.eot?#iefix') format('embedded-opentype'), url('../fonts/glyphicons-halflings-regular.woff') format('woff'), url('../fonts/glyphicons-halflings-regular.ttf') format('truetype'), url('../fonts/glyphicons-halflings-regular.svg#glyphicons-halflingsregular') format('svg')
 }
 
 .glyphicon {
@@ -3532,7 +3532,7 @@ input[type="button"].btn-block {
     margin: 2px 0 0;
     font-size: 14px;
     list-style: none;
-    background-color: #fff;
+    background-color: #000000;
     border: 1px solid #ccc;
     border: 1px solid rgba(0, 0, 0, 0.15);
     border-radius: 4px;
@@ -3550,7 +3550,7 @@ input[type="button"].btn-block {
     height: 1px;
     margin: 9px 0;
     overflow: hidden;
-    background-color: #e5e5e5
+    background-color: inherit
 }
 
 .dropdown-menu>li>a {
@@ -3567,7 +3567,7 @@ input[type="button"].btn-block {
 .dropdown-menu>li>a:focus {
     color: #262626;
     text-decoration: none;
-    background-color: #f5f5f5
+    background-color: #413535
 }
 
 .dropdown-menu>.active>a,
@@ -3582,7 +3582,7 @@ input[type="button"].btn-block {
 .dropdown-menu>.disabled>a,
 .dropdown-menu>.disabled>a:hover,
 .dropdown-menu>.disabled>a:focus {
-    color: #999
+    color: inherit
 }
 
 .dropdown-menu>.disabled>a:hover,
@@ -3607,7 +3607,7 @@ input[type="button"].btn-block {
     padding: 3px 20px;
     font-size: 12px;
     line-height: 1.428571429;
-    color: #999
+    color: inherit
 }
 
 .dropdown-backdrop {
@@ -4083,16 +4083,6 @@ textarea.input-group-sm>.input-group-btn>.btn {
     clear: both
 }
 
-.nav:before,
-.nav:after {
-    display: table;
-    content: " "
-}
-
-.nav:after {
-    clear: both
-}
-
 .nav>li {
     position: relative;
     display: block
@@ -4192,7 +4182,7 @@ textarea.input-group-sm>.input-group-btn>.btn {
 @media(min-width:768px) {
     .nav-tabs.nav-justified>li {
         display: table-cell;
-        width: auto
+        width: 1%
     }
     .nav-tabs.nav-justified>li>a {
         margin-bottom: 0
@@ -4223,7 +4213,10 @@ textarea.input-group-sm>.input-group-btn>.btn {
 }
 
 .nav-pills>li {
-    float: left
+    float: none;
+    padding-left: 0;
+    margin-bottom: 0;
+    list-style: none
 }
 
 .nav-pills>li>a {
@@ -4271,7 +4264,7 @@ textarea.input-group-sm>.input-group-btn>.btn {
 @media(min-width:768px) {
     .nav-justified>li {
         display: table-cell;
-        width: 1%
+        width: 100%
     }
     .nav-justified>li>a {
         margin-bottom: 0
