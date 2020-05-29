@@ -12,7 +12,7 @@ export class ProductService {
   getProd():Products
   {
       let temp=this.prod;
-      this.prod=undefined;
+    //  this.prod=undefined;
       return temp;
   }
 

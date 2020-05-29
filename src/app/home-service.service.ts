@@ -6,6 +6,7 @@ import { Login } from './login';
 import { catchError } from 'rxjs/operators'
 import { UserLogin } from './user-login';
 import { Category } from './category';
+import { Cart } from './cart';
 
 
 @Injectable({
@@ -61,8 +62,15 @@ export class HomeServiceService {
 
   }
 
-  getProduct(data: Products): Observable<Products> {
-    let url = `http://localhost:4000/categories/${data.category.category_id}/products/${data.product_id}`;
+  getProduct(cat:number,prod:number): Observable<Products> {
+    let url = `http://localhost:4000/categories/${cat}/products/${prod}`;
     return this.http.get<Products>(url);
   }
+
+  getCartProducts():Observable<Cart>
+  {
+    let url = `http://localhost:4000/categories/${sessionStorage.getItem('user')}/cart`;
+    return this.http.get<Cart>(url);
+  }
+
 }

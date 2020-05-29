@@ -46,7 +46,7 @@
                         </tr>
                     </thead>
                     <tbody>
-                        <tr *ngFor="let product of cart_items">
+                        <tr *ngFor="let product of cart_items | async">
                             <td class="cart_product">
                                 <a href=""><img src="images/cart/one.png" alt=""></a>
                             </td>
@@ -60,7 +60,7 @@
                             <td class="cart_quantity">
                                 <div class="cart_quantity_button">
 
-                                    <input class="cart_quantity_input" type="text" disabled name="quantity" value="1">
+                                    <input class="cart_quantity_input" type="text" disabled name="quantity" ([ngModel])="product.amount">
 
                                 </div>
                             </td>
@@ -68,7 +68,7 @@
                                 <p class="cart_total_price">{{product.price}}</p>
                             </td>
                             <td class="cart_delete">
-                                <a class="cart_quantity_delete" href=""><i class="fa fa-times"></i></a>
+                                <a class="cart_quantity_delete" href=""><i class="fa fa-times"></i></a> 
                             </td>
                         </tr>
 
@@ -192,11 +192,12 @@
                 </div>
                 <div class="col-sm-6">
                     <div class="total_area">
+                        
                         <ul>
-                            <li>Cart Sub Total <span>$59</span></li>
-                            <li>Eco Tax <span>$2</span></li>
+                            <li>Cart Sub Total <span>Rs{{sum}}</span></li>
+            
                             <li>Shipping Cost <span>Free</span></li>
-                            <li>Total <span>$61</span></li>
+                            <li>Total <span>Rs{{sum}}</span></li>
                         </ul>
                         <a class="btn btn-default update" href="">Update</a>
                         <a class="btn btn-default check_out" href="">Check Out</a>

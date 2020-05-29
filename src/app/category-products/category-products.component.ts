@@ -41,9 +41,9 @@ export class CategoryProductsComponent implements OnInit {
 
   onView(data:Products)
   {
-    this.service.getProduct(data).subscribe();
+   // this.service.getProduct(data).subscribe();
     this.prodS.setProd(data);
-    this.router.navigate(['/product']);
+    this.router.navigate(['/product',data.category.category_id,data.product_id]);
 
   }
 
