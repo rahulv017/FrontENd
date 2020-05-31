@@ -13,25 +13,33 @@ import { Cart } from '../cart';
 })
 export class CartPageComponent implements OnInit {
 
-  constructor(public router:Router,public cartS:AddCartService,public service:HomeServiceService) { }
+  constructor(public router: Router, public cartS: AddCartService, public service: HomeServiceService) { }
 
 
-    cart_items:Observable<Cart>;
-    sum:number=0;
+  cart_items: Cart[];
+  sum: number = 0;
 
   ngOnInit() {
 
-    if(sessionStorage.getItem('user')==null)
-    {
+    if (sessionStorage.getItem('user') == null) {
       alert('Please log in first!!!');
       this.router.navigate(['']);
     }
-    else{
-          this.cart_items=this.service.getCartProducts();
+    else {
+      this.service.getCartProducts().subscribe(response => this.fetch(response));
     }
-      let i=0;
-     this.cart_items.forEach(item => {this.sum=this.sum+parseInt(item.product.price)});
+    let i = 0;
+    //this.cart_items.forEach(item => {this.sum=this.sum+parseInt(item.product.price)});
     //this.cart_items=this.cartS.getProducts();
+  }
+
+  fetch(response: Cart[]) {
+    this.cart_items = response;
+    console.log(response.length)
+    let i = 0;
+    for (i = 0; i < this.cart_items.length; i++) {
+      this.sum = this.sum + parseInt(this.cart_items[i].product.price);
+    }
   }
 
 }

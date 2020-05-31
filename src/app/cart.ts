@@ -3,9 +3,9 @@ import { Products } from './products';
 
 export class Cart {
 
-    id:number;
-    customer:Login;
-    product:Products;
-    amount:number;
-    date:Date;
+    id: number;
+    customer: Login;
+    product: Products;
+    amount: number;
+    date: Date;
 }

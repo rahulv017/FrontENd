@@ -17,12 +17,14 @@ export class HomeServiceService {
   constructor(public http: HttpClient) { }
 
   getFeatureProducts(): Observable<Products[]> {
-    let url = "http://139.59.60.250:4000/products";
+    let url = "http://localhost:4000/products";
     return this.http.get<Products[]>(url);
   }
 
+  //139.59.60.250:4000
+
   onSignUp(data: Login) {
-    let url = "http://139.59.60.250:4000/customer";
+    let url = "http://localhost:4000/customer";
     return this.http.post(url, data).pipe(catchError(err => {
       if (err instanceof HttpErrorResponse) {
         console.error(err);
@@ -34,7 +36,7 @@ export class HomeServiceService {
 
   onLogin(data: UserLogin): Observable<Login> {
     console.log(JSON.stringify(data));
-    let url = `http://139.59.60.250:4000/home/${data.email}/${data.password}`;
+    let url = `http://localhost:4000/home/${data.email}/${data.password}`;
     return this.http.get<Login>(url).pipe(catchError(err => {
       if (err instanceof HttpErrorResponse) {
         console.error(err);
@@ -45,17 +47,17 @@ export class HomeServiceService {
   }
 
   getAllCategories(): Observable<Category[]> {
-    let url = "http://139.59.60.250:4000/categories";
+    let url = "http://localhost:4000/categories";
     return this.http.get<Category[]>(url);
   }
 
   getCategoryProducts(data: number): Observable<Products[]> {
-    let url = `http://139.59.60.250:4000/categories/${data}/products`;
+    let url = `http://localhost:4000/categories/${data}/products`;
     return this.http.get<Products[]>(url);
   }
 
   addToCart(data: Products, items: number) {
-    let url = `http://139.59.60.250:4000/customer/${sessionStorage.getItem('id')}/products/${data.product_id}/cart`;
+    let url = `http://localhost:4000/customer/${sessionStorage.getItem('id')}/products/${data.product_id}/cart`;
 
     let JsonData = { "date": "2012-03-19T07:22Z", "amount": items };
     return this.http.post(url, JsonData);
@@ -63,13 +65,14 @@ export class HomeServiceService {
   }
 
   getProduct(cat: number, prod: number): Observable<Products> {
-    let url = `http://139.59.60.250:4000/categories/${cat}/products/${prod}`;
+    let url = `http://localhost:4000/categories/${cat}/products/${prod}`;
     return this.http.get<Products>(url);
   }
 
-  getCartProducts(): Observable<Cart> {
-    let url = `http://139.59.60.250:4000/customer/${sessionStorage.getItem('id')}/cart`;
-    return this.http.get<Cart>(url);
+  getCartProducts(): Observable<Cart[]> {
+
+    let url = `http://localhost:4000/customer/${sessionStorage.getItem('id')}/cart`;
+    return this.http.get<Cart[]>(url);
   }
 
 }
