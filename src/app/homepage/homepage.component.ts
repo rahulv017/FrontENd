@@ -13,27 +13,30 @@ import { Category } from '../category';
 })
 export class HomepageComponent implements OnInit {
 
-  constructor(private service:HomeServiceService,private prodS:ProductService,private router:Router) { }
+  constructor(private service: HomeServiceService, private prodS: ProductService, private router: Router) { }
   // list_prod=ELE;
-   items:Observable<any>;
-   item_categories: Observable<Category[]>
+  items = new Array<Products[]>()
+  item_categories: Observable<Category[]>
   ngOnInit() {
-    this.items=this.service.getFeatureProducts();
+    this.service.getFeatureProducts().subscribe(response => this.fetch(response));
     this.item_categories = this.service.getAllCategories();
-     
+
+  }
+  fetch(response) {
+    this.items = response;
   }
 
-  onView(data:Products)
-  {
+  onView(data: Products) {
     //this.service.getProduct(data).subscribe();
     //this.prodS.setProd(data);
-    this.router.navigate(['/product',data.category.category_id,data.product_id]);
+    console.log(data.product_id);
+    console.log(data.category.id)
+    this.router.navigate(['/product', data.category.id, data.product_id]);
 
   }
 
-  onCategory(data:Category)
-  {
-     this.router.navigate(['/category',data.id]);
+  onCategory(data: Category) {
+    this.router.navigate(['/category', data.id]);
   }
 
 }

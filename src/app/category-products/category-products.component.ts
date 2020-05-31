@@ -13,10 +13,10 @@ import { ProductService } from '../product.service';
 })
 export class CategoryProductsComponent implements OnInit {
 
-  constructor(public active: ActivatedRoute, public service: HomeServiceService, public cartS: AddCartService,public router:Router,public prodS:ProductService) { }
+  constructor(public active: ActivatedRoute, public service: HomeServiceService, public cartS: AddCartService, public router: Router, public prodS: ProductService) { }
   id;
   cat_items: Observable<Products[]>
-  num_items: number=0;
+  num_items: number = 0;
   item_categories: Observable<Category[]>
   ngOnInit() {
     this.id = parseInt(this.active.snapshot.paramMap.get('id'));
@@ -39,11 +39,10 @@ export class CategoryProductsComponent implements OnInit {
     this.cartS.setProduct(data);
   }
 
-  onView(data:Products)
-  {
-   // this.service.getProduct(data).subscribe();
+  onView(data: Products) {
+    // this.service.getProduct(data).subscribe();
     this.prodS.setProd(data);
-    this.router.navigate(['/product',data.category.category_id,data.product_id]);
+    this.router.navigate(['/product', data.category.id, data.product_id]);
 
   }
 
